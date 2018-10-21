@@ -12,7 +12,17 @@ namespace bdeli.Controllers
         bdeliEntities db = new bdeliEntities();
         public ActionResult Index()
         {
-            return View();
+            List<HomeMaster> lst = new List<HomeMaster>();
+            HomeMaster home = new HomeMaster();
+            var video = db.bD_Video.Where(st => st.id == 1);
+            var img = db.bD_Images.Where(st => st.id == 1);
+            var sli = db.bD_Slide.Where(st => st.id == 1);
+            home.image = img;
+            home.slide = sli;
+            home.video = video;
+            lst.Add(home);
+            return View(lst);
+           
         }
 
         [HttpPost]
