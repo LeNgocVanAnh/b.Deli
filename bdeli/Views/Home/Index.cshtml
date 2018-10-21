@@ -1,4 +1,4 @@
-﻿@model IEnumerable<bdeli.Models.bD_Slide>
+﻿@model IEnumerable<bdeli.Models.HomeMaster>
 @{
     ViewBag.Title = "Home Page";
 }
@@ -225,17 +225,20 @@
 </div>
 <!-- Gallery Area End -->
 <!-- Video Section Start-->
+
 <div class="video-section section-padding cafetora-overlay text-center">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
                 <a onclick="changeVideo('UejYL2yYOL8')"><i class="fa fa-play-circle"></i></a>
-                <h1>We have <span>the best tea</span> in town</h1>
-                <p>Lorem ipsum dolor sit amet consectetuer adipiscing elit sed diam nonummy euismod tincidunt ut laoreet</p>
+                <h1>@Model.FirstOrDefault().video.FirstOrDefault().Title</h1>
+                <p>@ViewBag.Description</p>
             </div>
         </div>
     </div>
 </div>
+
+
 
 <!-- Video Popup -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-label="myModalLabel">

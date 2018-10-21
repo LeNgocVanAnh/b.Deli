@@ -9,5 +9,7 @@ namespace bdeli.Models
     {
         public IQueryable<bD_Slide> slide { get; set; }
         public List<bD_Images> img { get; set; }
+
+        public IQueryable<bD_Video> video { get; set; }
     }
 }

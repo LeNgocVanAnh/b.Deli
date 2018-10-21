@@ -69,5 +69,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="bD_Contacts">
+      <EntityTypeMapping TypeName="bdeliModel.bD_Contacts">
+        <MappingFragment StoreEntitySet="bD_Contacts">
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

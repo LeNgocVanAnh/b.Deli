@@ -170,12 +170,20 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\b.Deli\HomeController.cs" />
+    <Compile Include="Controllers\WebMaster\BookingController.cs" />
     <Compile Include="Controllers\WebMaster\HomeMasterController.cs" />
+    <Compile Include="Controllers\WebMaster\ImageController.cs" />
+    <Compile Include="Controllers\WebMaster\ServiceMasterController.cs" />
+    <Compile Include="Controllers\WebMaster\StoryMasterController.cs" />
+    <Compile Include="Controllers\WebMaster\VideoController.cs" />
     <Compile Include="Controllers\WebMaster\WebmasterController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\bD_Booking.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\bD_Contacts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\bD_Images.cs">
@@ -760,10 +768,17 @@
     <Content Include="Views\Webmaster\Index.cshtml" />
     <Content Include="Views\Webmaster\Login.cshtml" />
     <Content Include="Views\HomeMaster\Edit.cshtml" />
+    <Content Include="Views\Booking\List.cshtml" />
+    <Content Include="Views\HomeMaster\Contact.cshtml" />
+    <Content Include="Views\Video\Edit.cshtml" />
+    <Content Include="Views\ServiceMaster\Edit.cshtml" />
+    <Content Include="Views\ServiceMaster\Detail.cshtml" />
+    <Content Include="Views\StoryMaster\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\b.Deli\imageHome\" />
+    <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

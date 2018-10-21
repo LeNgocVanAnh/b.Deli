@@ -17,6 +17,15 @@
           <Property Name="Amount" Type="int" />
           <Property Name="Note" Type="nvarchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="bD_Contacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Sdt" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="bD_Images">
           <Key>
             <PropertyRef Name="id" />
@@ -69,6 +78,7 @@
         </EntityType>
         <EntityContainer Name="bdeliModelStoreContainer">
           <EntitySet Name="bD_Booking" EntityType="Self.bD_Booking" Schema="dbo" Table="bD.Booking" store:Type="Tables" />
+          <EntitySet Name="bD_Contacts" EntityType="Self.bD_Contacts" Schema="dbo" Table="bD.Contacts" store:Type="Tables" />
           <EntitySet Name="bD_Images" EntityType="Self.bD_Images" Schema="dbo" Table="bD.Images" store:Type="Tables" />
           <EntitySet Name="bD_Introduce" EntityType="Self.bD_Introduce" Schema="dbo" Table="bD.Introduce" store:Type="Tables" />
           <EntitySet Name="bD_Service" EntityType="Self.bD_Service" Schema="dbo" Table="bD.Service" store:Type="Tables" />
@@ -148,7 +158,17 @@
           <EntitySet Name="bD_Service" EntityType="Self.bD_Service" />
           <EntitySet Name="bD_Slide" EntityType="Self.bD_Slide" />
           <EntitySet Name="bD_Video" EntityType="Self.bD_Video" />
+          <EntitySet Name="bD_Contacts" EntityType="bdeliModel.bD_Contacts" />
         </EntityContainer>
+        <EntityType Name="bD_Contacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -220,6 +240,16 @@
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="bD_Contacts">
+            <EntityTypeMapping TypeName="bdeliModel.bD_Contacts">
+              <MappingFragment StoreEntitySet="bD_Contacts">
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Sdt" ColumnName="Sdt" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -2,22 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using bdeli.Models;
 using System.Web.Mvc;
+using bdeli.Models;
 using System.IO;
 
 namespace bdeli.Controllers.WebMaster
 {
-
-    public class HomeMasterController : Controller
+    public class StoryMasterController : Controller
     {
         bdeliEntities db = new bdeliEntities();
-        // GET: HomeMaster
+        // GET: StoryMaster
         public ActionResult Edit()
         {
             if (Session["Authentication"] != null)
             {
-                var rs = db.bD_Slide.Where(s => s.id == 1);
+                var rs = db.bD_Introduce.Where(s => s.id == 1);
                 return View(rs);
             }
             else
@@ -26,7 +25,7 @@ namespace bdeli.Controllers.WebMaster
             }
         }
         [HttpPost]
-        public ActionResult Edit(string title, string description, HttpPostedFileBase[] images)
+        public ActionResult Edit(string title, string des, string subtitle, HttpPostedFileBase[] images)
         {
             if (Session["Authentication"] != null)
             {
@@ -41,7 +40,7 @@ namespace bdeli.Controllers.WebMaster
                             {
                                 var filename = Path.GetFileName(file.FileName);
                                 var fname = filename.Replace(" ", "_");
-                                var path = Path.Combine(Server.MapPath("~/Images/b.Deli/imageHome"), fname);
+                                var path = Path.Combine(Server.MapPath("~/Images/b.Deli/imagehome"), fname);
                                 file.SaveAs(path);
                                 Images += fname + ",";
                             }
@@ -52,29 +51,18 @@ namespace bdeli.Controllers.WebMaster
                         Images = Images.Remove(Images.Length - 1);
                     }
                 }
-                var home = db.bD_Slide.Find(1);
-                home.Title = title;
-                home.Description = description;
+                var st = db.bD_Introduce.Find(1);
+                st.Title = title;
+                st.Description = des;
+                st.Subtitle = subtitle;
+
                 if (Images != "")
                 {
-                    home.Images = Images;
+                    st.Images = Images;
                 }
-                db.Entry(home).State = System.Data.Entity.EntityState.Modified;
+                db.Entry(st).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Edit");
-            }
-            else
-            {
-                return RedirectToAction("Login", "Webmaster");
-            }
-        }
-
-        public ActionResult Contact()
-        {
-            if (Session["Authentication"] != null)
-            {
-                var rs = db.bD_Contacts.Where(s => s.id == 1);
-                return View(rs);
             }
             else
             {

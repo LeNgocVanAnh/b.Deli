@@ -323,7 +323,7 @@ p {
 
 .intro {
     background-color: #373B44;
-    background: url(img/intro-bg.jpg);
+   
     background-size: cover;
     color: #F1B41C;
     display: table;
@@ -374,6 +374,7 @@ p {
 .intro-heading .letters {
   display: inline-block;
   opacity: 0;
+  font-size: 40px;
 }
 
 .intro p {
@@ -871,13 +872,14 @@ p {
 
 .booking-form input[type="text"],
 .booking-form input[type="email"],
-.booking-form input[type="tel"] {
+.booking-form input[type="tel"],
+.booking-form input[type="number"] {
     border: 1px solid #F1B41C;
     margin-bottom: 15px;
     padding: 7px;
     width: 100%;
 }
-input[type="text"],input[type="email"] , textarea{ background: black;}
+input[type="text"],input[type="email"] , input[type="number"] textarea{ background: black;}
 ::-webkit-input-placeholder {
    color: #F1B41C;
 }

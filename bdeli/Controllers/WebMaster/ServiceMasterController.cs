@@ -2,33 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using bdeli.Models;
 using System.Web.Mvc;
+using bdeli.Models;
 using System.IO;
 
 namespace bdeli.Controllers.WebMaster
 {
-
-    public class HomeMasterController : Controller
+    public class ServiceMasterController : Controller
     {
         bdeliEntities db = new bdeliEntities();
-        // GET: HomeMaster
-        public ActionResult Edit()
+        // GET: ServiceMaster
+        public ActionResult Edit(string ID)
         {
             if (Session["Authentication"] != null)
             {
-                var rs = db.bD_Slide.Where(s => s.id == 1);
+                var id = int.Parse(ID);
+                var rs = db.bD_Service.Find(id);
                 return View(rs);
             }
             else
             {
                 return RedirectToAction("Login", "Webmaster");
             }
+
         }
+
+
         [HttpPost]
-        public ActionResult Edit(string title, string description, HttpPostedFileBase[] images)
+        public ActionResult Edit(string id, string title, string des, HttpPostedFileBase[] images)
         {
-            if (Session["Authentication"] != null)
+            if(Session["Authentication"] != null)
             {
                 string Images = "";
                 if (images != null)
@@ -52,9 +55,9 @@ namespace bdeli.Controllers.WebMaster
                         Images = Images.Remove(Images.Length - 1);
                     }
                 }
-                var home = db.bD_Slide.Find(1);
+                var home = db.bD_Service.Find(id);
                 home.Title = title;
-                home.Description = description;
+                home.Description = des;
                 if (Images != "")
                 {
                     home.Images = Images;
@@ -62,19 +65,6 @@ namespace bdeli.Controllers.WebMaster
                 db.Entry(home).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Edit");
-            }
-            else
-            {
-                return RedirectToAction("Login", "Webmaster");
-            }
-        }
-
-        public ActionResult Contact()
-        {
-            if (Session["Authentication"] != null)
-            {
-                var rs = db.bD_Contacts.Where(s => s.id == 1);
-                return View(rs);
             }
             else
             {

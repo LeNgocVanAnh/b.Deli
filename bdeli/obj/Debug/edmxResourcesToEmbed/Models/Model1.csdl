@@ -69,5 +69,15 @@
     <EntitySet Name="bD_Service" EntityType="Self.bD_Service" />
     <EntitySet Name="bD_Slide" EntityType="Self.bD_Slide" />
     <EntitySet Name="bD_Video" EntityType="Self.bD_Video" />
+    <EntitySet Name="bD_Contacts" EntityType="bdeliModel.bD_Contacts" />
   </EntityContainer>
+  <EntityType Name="bD_Contacts">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sdt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

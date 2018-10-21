@@ -3,12 +3,12 @@
 @{
     bdeliEntities db = new bdeliEntities();
     var lst = db.bD_Slide.ToList();
-    string[] arrStr;
+ 
 }
 <!DOCTYPE html>
-<html lang="en"
+<html lang="en">
 
-<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+
 <head>
     <!-- Basic Page Needs
     ============================================ -->
@@ -17,7 +17,7 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="keywords" content="">
-
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <!-- Mobile Specific Metas
     ============================================ -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -67,27 +67,31 @@
     </div>
     <!-- Template Preloader End -->
     <!-- Intro Area Start -->
-    <div class="intro cafetora-overlay">
-        <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-7">
-                        <h1 class="intro-heading">
-                            @*<img class="intro cafetora-overlay" src="~/Content/b.Deli/Assets/img/intro-bg.jpg" />*@
-                            <span class="text-wrapper">
-                                <span></span>
-                            </span>
-                        </h1>
-                        @foreach (var item in lst)
-                        {
-                            <p>@Model.FirstOrDefault().Description</p>
-                        }
-                        <a class="btn cafetora-medium-btn" href="#about-us">Tìm hiểu thêm</a> <a class="btn cafetora-medium-btn white-btn" href="#reservation">Đặt Trước</a>
+    @foreach (var item in lst)
+    {
+        <div class="intro cafetora-overlay" value="@item.id" style=" background: url(../../Images/b.Deli/imageHome/@item.Images)">
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-7">
+
+                            <h1 class="intro-heading">
+                                <span class="text-wrapper">
+                                    <span class="line line1"></span>
+                                    <span class="letters letters-left" value="@item.id">@item.Title</span>
+                                    <span class="line line2"></span>
+                                </span>
+                            </h1>
+                            <p value="@item.id">@item.Description</p>
+
+                            <a class="btn cafetora-medium-btn" href="#about-us">Tìm hiểu thêm</a> <a class="btn cafetora-medium-btn white-btn" href="#reservation">Đặt Trước</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    }
+
     <!-- Intro Area End -->
     <!-- Header Area Start -->
     <div class="header-area" id="cafetoraHeader">
@@ -247,5 +251,4 @@
 
 </body>
 
-</html>
 </html>

@@ -31,5 +31,6 @@ namespace bdeli.Models
         public virtual DbSet<bD_Service> bD_Service { get; set; }
         public virtual DbSet<bD_Slide> bD_Slide { get; set; }
         public virtual DbSet<bD_Video> bD_Video { get; set; }
+        public virtual DbSet<bD_Contacts> bD_Contacts { get; set; }
     }
 }
