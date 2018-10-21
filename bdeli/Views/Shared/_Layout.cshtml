@@ -1,8 +1,7 @@
-﻿@model IQueryable<bdeli.Models.bD_Slide>
+﻿@model IEnumerable<bdeli.Models.HomeMaster>
 @using bdeli.Models
 @{
     bdeliEntities db = new bdeliEntities();
-    var lst = db.bD_Slide.ToList();
  
 }
 <!DOCTYPE html>
@@ -67,9 +66,8 @@
     </div>
     <!-- Template Preloader End -->
     <!-- Intro Area Start -->
-    @foreach (var item in lst)
-    {
-        <div class="intro cafetora-overlay" value="@item.id" style=" background: url(../../Images/b.Deli/imageHome/@item.Images)">
+
+        <div class="intro cafetora-overlay"style=" background: url(../../Images/b.Deli/imageHome/@Model.FirstOrDefault().slide.FirstOrDefault().Images)">
             <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -78,11 +76,11 @@
                             <h1 class="intro-heading">
                                 <span class="text-wrapper">
                                     <span class="line line1"></span>
-                                    <span class="letters letters-left" value="@item.id">@item.Title</span>
+                                    <span class="letters letters-left">@Model.FirstOrDefault().slide.FirstOrDefault().Title</span>
                                     <span class="line line2"></span>
                                 </span>
                             </h1>
-                            <p value="@item.id">@item.Description</p>
+                            <p>@Model.FirstOrDefault().slide.FirstOrDefault().Description</p>
 
                             <a class="btn cafetora-medium-btn" href="#about-us">Tìm hiểu thêm</a> <a class="btn cafetora-medium-btn white-btn" href="#reservation">Đặt Trước</a>
                         </div>
@@ -90,7 +88,7 @@
                 </div>
             </div>
         </div>
-    }
+  
 
     <!-- Intro Area End -->
     <!-- Header Area Start -->

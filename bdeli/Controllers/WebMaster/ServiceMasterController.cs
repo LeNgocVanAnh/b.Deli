@@ -12,12 +12,12 @@ namespace bdeli.Controllers.WebMaster
     {
         bdeliEntities db = new bdeliEntities();
         // GET: ServiceMaster
-        public ActionResult Edit(string ID)
+        public ActionResult Edit()
         {
             if (Session["Authentication"] != null)
             {
-                var id = int.Parse(ID);
-                var rs = db.bD_Service.Find(id);
+           
+                var rs = db.bD_Service.Where(st => st.id == 1);
                 return View(rs);
             }
             else
@@ -29,14 +29,14 @@ namespace bdeli.Controllers.WebMaster
 
 
         [HttpPost]
-        public ActionResult Edit(string id, string title, string des, HttpPostedFileBase[] images)
+        public ActionResult Edit(string id, string title1, string des1, string title2, string des2, string title3, string des3, HttpPostedFileBase[] images1, HttpPostedFileBase[] images2, HttpPostedFileBase[] images3)
         {
             if(Session["Authentication"] != null)
             {
                 string Images = "";
-                if (images != null)
+                if (images1 != null && images2 != null && images3 != null)
                 {
-                    foreach (HttpPostedFileBase file in images)
+                    foreach (HttpPostedFileBase file in images1)
                     {
                         if (file != null)
                         {
@@ -55,12 +55,18 @@ namespace bdeli.Controllers.WebMaster
                         Images = Images.Remove(Images.Length - 1);
                     }
                 }
-                var home = db.bD_Service.Find(id);
-                home.Title = title;
-                home.Description = des;
+                var home = db.bD_Service.Find(1);
+                home.Title1 = title1;
+                home.Description1 = des1;
+                home.Title2 = title2;
+                home.Description2 = des2;
+                home.Title3 = title3;
+                home.Description3 = des3;
                 if (Images != "")
                 {
-                    home.Images = Images;
+                    home.Images1 = Images;
+                    home.Images2 = Images;
+                    home.Images3 = Images;
                 }
                 db.Entry(home).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();

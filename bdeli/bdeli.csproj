@@ -773,11 +773,11 @@
     <Content Include="Views\Video\Edit.cshtml" />
     <Content Include="Views\ServiceMaster\Edit.cshtml" />
     <Content Include="Views\StoryMaster\Edit.cshtml" />
+    <Content Include="Views\Image\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Images\b.Deli\imageHome\" />
-    <Folder Include="Views\Image\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

@@ -11,5 +11,6 @@ namespace bdeli.Models
         public List<bD_Images> image { get; set; }
 
         public IQueryable<bD_Video> video { get; set; }
+        public IQueryable<bD_Service> ser { get; set; }
     }
 }

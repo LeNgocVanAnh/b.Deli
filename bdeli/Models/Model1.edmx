@@ -55,9 +55,15 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Images" Type="nvarchar" MaxLength="50" />
-          <Property Name="Title" Type="nvarchar" MaxLength="40" />
-          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Images1" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title1" Type="nvarchar" MaxLength="40" />
+          <Property Name="Description1" Type="nvarchar" MaxLength="200" />
+          <Property Name="Images2" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title2" Type="nvarchar" MaxLength="40" />
+          <Property Name="Description2" Type="nvarchar" MaxLength="200" />
+          <Property Name="Images3" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title3" Type="nvarchar" MaxLength="40" />
+          <Property Name="Description3" Type="nvarchar" MaxLength="200" />
         </EntityType>
         <EntityType Name="bD_Slide">
           <Key>
@@ -130,9 +136,15 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Images" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
-          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Images1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title1" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Description1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Images2" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title2" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Description2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Images3" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title3" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Description3" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="bD_Slide">
           <Key>
@@ -217,11 +229,17 @@
           <EntitySetMapping Name="bD_Service">
             <EntityTypeMapping TypeName="bdeliModel.bD_Service">
               <MappingFragment StoreEntitySet="bD_Service">
+                <ScalarProperty Name="Description3" ColumnName="Description3" />
+                <ScalarProperty Name="Title3" ColumnName="Title3" />
+                <ScalarProperty Name="Images3" ColumnName="Images3" />
+                <ScalarProperty Name="Description2" ColumnName="Description2" />
+                <ScalarProperty Name="Title2" ColumnName="Title2" />
+                <ScalarProperty Name="Images2" ColumnName="Images2" />
+                <ScalarProperty Name="Description1" ColumnName="Description1" />
+                <ScalarProperty Name="Title1" ColumnName="Title1" />
+                <ScalarProperty Name="Images1" ColumnName="Images1" />
                 <ScalarProperty Name="id" ColumnName="id" />
-                <ScalarProperty Name="Images" ColumnName="Images" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
+                </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="bD_Slide">

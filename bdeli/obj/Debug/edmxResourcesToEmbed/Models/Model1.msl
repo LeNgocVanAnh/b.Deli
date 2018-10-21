@@ -43,10 +43,16 @@
     <EntitySetMapping Name="bD_Service">
       <EntityTypeMapping TypeName="bdeliModel.bD_Service">
         <MappingFragment StoreEntitySet="bD_Service">
+          <ScalarProperty Name="Description3" ColumnName="Description3" />
+          <ScalarProperty Name="Title3" ColumnName="Title3" />
+          <ScalarProperty Name="Images3" ColumnName="Images3" />
+          <ScalarProperty Name="Description2" ColumnName="Description2" />
+          <ScalarProperty Name="Title2" ColumnName="Title2" />
+          <ScalarProperty Name="Images2" ColumnName="Images2" />
+          <ScalarProperty Name="Description1" ColumnName="Description1" />
+          <ScalarProperty Name="Title1" ColumnName="Title1" />
+          <ScalarProperty Name="Images1" ColumnName="Images1" />
           <ScalarProperty Name="id" ColumnName="id" />
-          <ScalarProperty Name="Images" ColumnName="Images" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

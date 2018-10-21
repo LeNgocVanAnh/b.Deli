@@ -14,10 +14,11 @@ namespace bdeli.Controllers
         {
             List<HomeMaster> lst = new List<HomeMaster>();
             HomeMaster home = new HomeMaster();
+            //int id = int.Parse(ID);
             var video = db.bD_Video.Where(st => st.id == 1);
             var img = db.bD_Images.Where(st => st.id == 1);
             var sli = db.bD_Slide.Where(st => st.id == 1);
-            home.image = img;
+            //home.image = img;
             home.slide = sli;
             home.video = video;
             lst.Add(home);

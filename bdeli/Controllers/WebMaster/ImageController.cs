@@ -9,7 +9,7 @@ namespace bdeli.Controllers.WebMaster
     public class ImageController : Controller
     {
         // GET: Image
-        public ActionResult Index()
+        public ActionResult Edit()
         {
             return View();
         }

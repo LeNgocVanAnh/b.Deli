@@ -1,4 +1,6 @@
-﻿@model IEnumerable<bdeli.Models.bdeliEntities>
+﻿@model IEnumerable < bdeli.Models.HomeMaster >
+@{
+
     ViewBag.Title = "Home Page";
 }
 
@@ -231,7 +233,7 @@
             <div class="col-md-12">
                 <a onclick="changeVideo('UejYL2yYOL8')"><i class="fa fa-play-circle"></i></a>
                 <h1>@Model.FirstOrDefault().video.FirstOrDefault().Title</h1>
-                <p>@ViewBag.Description</p>
+                <p>@Model.FirstOrDefault().video.FirstOrDefault().Description</p>
             </div>
         </div>
     </div>

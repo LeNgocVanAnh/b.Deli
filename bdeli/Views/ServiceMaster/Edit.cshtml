@@ -1,6 +1,6 @@
 ﻿@model IEnumerable<bdeli.Models.bD_Service>
 @{
-    ViewBag.Title = "Add";
+    ViewBag.Title = "Edit";
     Layout = "~/Views/Shared/_LayoutMaster.cshtml";
     string[] arrStr;
 
@@ -38,11 +38,11 @@
 
                                 <div class="row ">
                                     <div class="col-lg-4">
-                                        @if (Model.FirstOrDefault().Images != null)
+                                        @if (Model.FirstOrDefault().Images1 != null)
                                         {
-                                            if (Model.FirstOrDefault().Images.Contains(","))
+                                            if (Model.FirstOrDefault().Images1.Contains(","))
                                             {
-                                                arrStr = Model.FirstOrDefault().Images.Split(',');
+                                                arrStr = Model.FirstOrDefault().Images1.Split(',');
                                                 <div class="form-group">
                                                     <label for="exampleFormControlFile1">Hình ảnh (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                                     <br />
@@ -63,7 +63,7 @@
                                                     <label for="exampleFormControlFile1">Hình ảnh  (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                                     <br />
                                                     <input type="file" name="images" accept="image/*" multiple="multiple" />
-                                                    <img src="~/Images/b.Deli/imageHome/@Model.FirstOrDefault().Images" style="width:100%" />
+                                                    <img src="~/Images/b.Deli/imageHome/@Model.FirstOrDefault().Images1" style="width:100%" />
                                                 </div>
                                             }
                                         }
@@ -77,21 +77,21 @@
                                         }
                                         <div class="form-group">
                                             <label for="exampleFormControlInput4">Title (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
-                                            <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title">
+                                            <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title1">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleFormControlInput4">Description (VUI LÒNG NHẬP DƯỚI 1000 KÍ TỰ)</label>
-                                            <input type="text" class="form-control" placeholder="" name="description" value="@Model.FirstOrDefault().Description">
+                                            <input type="text" class="form-control" placeholder="" name="description" value="@Model.FirstOrDefault().Description1">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
-                                        @if (Model.FirstOrDefault().Images != null)
+                                        @if (Model.FirstOrDefault().Images2 != null)
                                         {
-                                            if (Model.FirstOrDefault().Images.Contains(","))
+                                            if (Model.FirstOrDefault().Images2.Contains(","))
                                             {
-                                                arrStr = Model.FirstOrDefault().Images.Split(',');
+                                                arrStr = Model.FirstOrDefault().Images2.Split(',');
                                                 <div class="form-group">
                                                     <label for="exampleFormControlFile1">Hình ảnh (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                                     <br />
@@ -112,7 +112,7 @@
                                                     <label for="exampleFormControlFile1">Hình ảnh  (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                                     <br />
                                                     <input type="file" name="images" accept="image/*" multiple="multiple" />
-                                                    <img src="~/Images/b.Deli/imageHome/@Model.FirstOrDefault().Images" style="width:100%" />
+                                                    <img src="~/Images/b.Deli/imageHome/@Model.FirstOrDefault().Images2" style="width:100%" />
                                                 </div>
                                             }
                                         }
@@ -126,21 +126,21 @@
                                         }
                                         <div class="form-group">
                                             <label for="exampleFormControlInput4">Title (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
-                                            <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title">
+                                            <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title2">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleFormControlInput4">Description (VUI LÒNG NHẬP DƯỚI 1000 KÍ TỰ)</label>
-                                            <input type="text" class="form-control" placeholder="" name="description" value="@Model.FirstOrDefault().Description">
+                                            <input type="text" class="form-control" placeholder="" name="description" value="@Model.FirstOrDefault().Description2">
                                         </div>
                                     </div>
 
                                     <div class="col-lg-4">
-                                        @if (Model.FirstOrDefault().Images != null)
+                                        @if (Model.FirstOrDefault().Images3 != null)
                                         {
-                                            if (Model.FirstOrDefault().Images.Contains(","))
+                                            if (Model.FirstOrDefault().Images3.Contains(","))
                                             {
-                                                arrStr = Model.FirstOrDefault().Images.Split(',');
+                                                arrStr = Model.FirstOrDefault().Images3.Split(',');
                                                 <div class="form-group">
                                                     <label for="exampleFormControlFile1">Hình ảnh (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                                     <br />
@@ -161,7 +161,7 @@
                                                     <label for="exampleFormControlFile1">Hình ảnh  (VUI LÒNG THÊM HÌNH VỚI KÍCH CỠ 1920x720 HOẶC LỚN HƠN)</label>
                                                     <br />
                                                     <input type="file" name="images" accept="image/*" multiple="multiple" />
-                                                    <img src="~/Images/b.Deli/imageHome/@Model.FirstOrDefault().Images" style="width:100%" />
+                                                    <img src="~/Images/b.Deli/imageHome/@Model.FirstOrDefault().Images3" style="width:100%" />
                                                 </div>
                                             }
                                         }
@@ -175,12 +175,12 @@
                                         }
                                         <div class="form-group">
                                             <label for="exampleFormControlInput4">Title (VUI LÒNG NHẬP DƯỚI 50 KÍ TỰ)</label>
-                                            <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title">
+                                            <input type="text" class="form-control" placeholder="" name="title" value="@Model.FirstOrDefault().Title3">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleFormControlInput4">Description (VUI LÒNG NHẬP DƯỚI 1000 KÍ TỰ)</label>
-                                            <input type="text" class="form-control" placeholder="" name="description" value="@Model.FirstOrDefault().Description">
+                                            <input type="text" class="form-control" placeholder="" name="description" value="@Model.FirstOrDefault().Description3">
                                         </div>
                                     </div>
                                 </div>
