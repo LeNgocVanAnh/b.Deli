@@ -33,8 +33,16 @@ namespace bdeli.Controllers.WebMaster
                     Session["Authentication"] = true;
                     return RedirectToAction("Index");
                 }
+                else
+                {
+                    return RedirectToAction("Login", "Webmaster");
+                }
             }
-            return RedirectToAction("Login");
+            else
+            {
+                return RedirectToAction("Login", "Webmaster");
+            }
+            
         }
 
         [HttpGet]
@@ -44,7 +52,11 @@ namespace bdeli.Controllers.WebMaster
             {
                 return RedirectToAction("null");
             }
-            return RedirectToAction("Index");
+            else
+            {
+                return RedirectToAction("Index");
+            }
+            
         }
     }
 }
